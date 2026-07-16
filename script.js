@@ -1,96 +1,158 @@
-// ===============================
-// Elements
-// ===============================
+// =========================
+// LOADING TRANSITION
+// =========================
 
 const loadingScreen = document.getElementById("loading-screen");
-const revealScreen = document.getElementById("reveal-screen");
+const mainScreen = document.getElementById("main-screen");
 
-const bootText = document.getElementById("bootText");
-const statusText = document.getElementById("statusText");
-const progressBar = document.getElementById("progress-bar");
+const title = document.getElementById("title");
+const message = document.getElementById("message");
+const button = document.getElementById("continueBtn");
 
-const continueBtn = document.getElementById("continueBtn");
+// Wait for loading animation
+setTimeout(() => {
 
-// ===============================
-// Boot Sequence
-// ===============================
+    loadingScreen.style.opacity = "0";
 
-const messages = [
-"Initializing...",
-"Connecting...",
-"Searching...",
-"Looking for today's brightest smile...",
-"Almost there...",
-"Match Found ✨"
+    setTimeout(() => {
+
+        loadingScreen.style.display = "none";
+
+        mainScreen.style.display = "flex";
+
+        showScene1();
+
+    },1000);
+
+},4200);
+
+
+// =========================
+// SCENE DATA
+// =========================
+
+const scenes = [
+
+{
+
+title:"Hey 😊",
+
+text:"I wasn't sure whether to send this... but I thought maybe today could use a little smile."
+
+},
+
+{
+
+title:"Wait... ✨",
+
+text:"Don't rush. This isn't just another webpage. Every click is hiding something."
+
+},
+
+{
+
+title:"For You 🌸",
+
+text:"Some people make ordinary conversations feel unexpectedly special."
+
+},
+
+{
+
+title:"Guess Who? ❤️",
+
+text:"Yes... I'm talking about you, Angutty."
+
+},
+
+{
+
+title:"😊",
+
+text:"Thank you for existing exactly as you are."
+
+}
+
 ];
 
-let msg = 0;
-let progress = 0;
+let currentScene = 0;
 
-bootText.innerHTML = messages[0];
-statusText.innerHTML = "Please wait...";
 
-const interval = setInterval(()=>{
+// =========================
+// TYPEWRITER EFFECT
+// =========================
 
-progress += 2;
-progressBar.style.width = progress + "%";
+function typeWriter(element,text,speed=35){
 
-if(progress==15){
-bootText.innerHTML=messages[1];
-statusText.innerHTML="Establishing connection...";
+element.innerHTML="";
+
+let i=0;
+
+const typing=setInterval(()=>{
+
+element.innerHTML+=text.charAt(i);
+
+i++;
+
+if(i>=text.length){
+
+clearInterval(typing);
+
 }
 
-if(progress==35){
-bootText.innerHTML=messages[2];
-statusText.innerHTML="Scanning...";
+},speed);
+
 }
 
-if(progress==55){
-bootText.innerHTML=messages[3];
-statusText.innerHTML="This may take a moment...";
-}
 
-if(progress==80){
-bootText.innerHTML=messages[4];
-statusText.innerHTML="Preparing surprise...";
-}
+// =========================
+// SHOW SCENE
+// =========================
 
-if(progress>=100){
+function showScene(index){
 
-clearInterval(interval);
-
-bootText.innerHTML=messages[5];
-
-statusText.innerHTML="Success ❤️";
+title.style.opacity=0;
+message.style.opacity=0;
 
 setTimeout(()=>{
 
-loadingScreen.classList.remove("active");
+title.innerHTML=scenes[index].title;
 
-revealScreen.classList.add("active");
+typeWriter(message,scenes[index].text);
 
-},1800);
+title.style.opacity=1;
+message.style.opacity=1;
+
+},300);
 
 }
 
-},80);
+function showScene1(){
 
-// ===============================
-// Continue Button
-// ===============================
+showScene(0);
 
-continueBtn.addEventListener("click",()=>{
+}
 
-document.querySelector(".glass-card").style.transform="scale(.95)";
 
-document.querySelector(".glass-card").style.opacity="0";
+// =========================
+// BUTTON
+// =========================
 
-setTimeout(()=>{
+button.addEventListener("click",()=>{
 
-revealScreen.classList.remove("active");
+currentScene++;
 
-document.getElementById("stars-screen").classList.add("active");
+if(currentScene<scenes.length){
 
-},700);
+showScene(currentScene);
+
+}
+else{
+
+button.innerHTML="✨ More Coming Soon ✨";
+
+button.disabled=true;
+
+}
 
 });
