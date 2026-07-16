@@ -156,3 +156,29 @@ button.disabled=true;
 }
 
 });
+// ======================================
+// CREATE ANIMATED STARS
+// ======================================
+
+const starsContainer = document.getElementById("stars");
+
+for(let i = 0; i < 250; i++){
+
+    const star = document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.left = Math.random() * window.innerWidth + "px";
+
+    star.style.top = Math.random() * window.innerHeight + "px";
+
+    const size = Math.random() * 3 + 1;
+
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    star.style.animationDuration = (2 + Math.random() * 5) + "s";
+
+    starsContainer.appendChild(star);
+
+}
