@@ -3,105 +3,133 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>✨ A Little Surprise ✨</title>
+    <title>For Angutty ❤️</title>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+    <!-- Google Fonts -->
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
-rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-<link rel="stylesheet"
-href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
 
 </head>
 
 <body>
 
-<!-- ===================== -->
-<!-- SPACE BACKGROUND -->
-<!-- ===================== -->
+<!-- ====================================== -->
+<!-- GALAXY BACKGROUND -->
+<!-- ====================================== -->
 
-<div id="space">
+<div id="background">
 
-<div id="stars1"></div>
+    <div id="stars"></div>
 
-<div id="stars2"></div>
+    <div id="shootingStars"></div>
 
-<div id="stars3"></div>
-
-<div id="nebula"></div>
+    <div id="nebula"></div>
 
 </div>
 
-<!-- ===================== -->
+<!-- ====================================== -->
 <!-- LOADING SCREEN -->
-<!-- ===================== -->
+<!-- ====================================== -->
 
 <section id="loadingScreen">
 
-<div class="terminal">
+    <div class="terminal">
 
-<h1 id="bootTitle">
+        <div class="terminal-header">
 
-INITIALIZING...
+            <span class="dot red"></span>
 
-</h1>
+            <span class="dot yellow"></span>
 
-<div class="progress">
+            <span class="dot green"></span>
 
-<div id="bar"></div>
+        </div>
 
-</div>
+        <div class="terminal-body">
 
-<p id="status">
+            <h1 id="bootTitle">
 
-Preparing something special...
+                SYSTEM ONLINE
 
-</p>
+            </h1>
 
-</div>
+            <p id="bootText">
 
-</section>
+                Initializing...
 
-<!-- ===================== -->
-<!-- MAIN CONTENT -->
-<!-- ===================== -->
+            </p>
 
-<section id="mainScreen">
+            <div class="progressBox">
 
-<div class="glass">
+                <div id="progressBar"></div>
 
-<h1 id="sceneTitle">
+            </div>
 
-</h1>
+            <p id="statusText">
 
-<p id="sceneText">
+                Preparing something special...
 
-</p>
+            </p>
 
-<button id="nextButton">
+        </div>
 
-Continue ❤️
-
-</button>
-
-</div>
+    </div>
 
 </section>
 
-<script src="script.js">
+<!-- ====================================== -->
+<!-- MAIN STORY -->
+<!-- ====================================== -->
 
-</script>
+<main id="story">
+
+    <div class="glassCard">
+
+        <h1 id="sceneTitle"></h1>
+
+        <p id="sceneText"></p>
+
+        <div id="choices"></div>
+
+        <button id="nextButton">
+
+            Continue →
+
+        </button>
+
+    </div>
+
+</main>
+
+<!-- ====================================== -->
+<!-- PARTICLES -->
+<!-- ====================================== -->
+
+<div id="particles"></div>
+
+<!-- ====================================== -->
+<!-- CONFETTI -->
+<!-- ====================================== -->
+
+<canvas id="confettiCanvas"></canvas>
+
+<script src="script.js"></script>
 
 </body>
 
