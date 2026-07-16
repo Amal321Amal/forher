@@ -419,3 +419,108 @@ scale(1);
 }
 
 }
+/* ===========================================
+            STARS
+=========================================== */
+
+.star{
+
+position:absolute;
+
+background:white;
+
+border-radius:50%;
+
+animation:
+
+twinkle infinite alternate;
+
+box-shadow:
+
+0 0 8px white;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.15;
+
+transform:scale(.6);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1.6);
+
+}
+
+}
+
+/* ===========================================
+        SHOOTING STAR
+=========================================== */
+
+.shootingStar{
+
+position:absolute;
+
+width:180px;
+
+height:2px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+white,
+
+#6ab7ff,
+
+transparent
+
+);
+
+transform:
+
+rotate(-35deg);
+
+animation:
+
+meteor 2s linear forwards;
+
+}
+
+@keyframes meteor{
+
+0%{
+
+transform:
+
+translate(0,0)
+
+rotate(-35deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+
+translate(-1200px,900px)
+
+rotate(-35deg);
+
+opacity:0;
+
+}
+
+}
