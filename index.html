@@ -1,35 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Little Surprise ✨</title>
 
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Surprise ✨</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-  <!-- Background Stars -->
-  <div id="stars"></div>
+<!-- ========================= -->
+<!-- GALAXY BACKGROUND -->
+<!-- ========================= -->
 
-  <!-- Main Content -->
-  <div class="container">
+<div id="stars"></div>
+<div id="shooting-stars"></div>
 
-    <h1 id="typing"></h1>
+<!-- ========================= -->
+<!-- LOADING SCREEN -->
+<!-- ========================= -->
 
-    <p id="message"></p>
+<section id="loading-screen" class="screen active">
 
-    <button id="continueBtn">
-      Continue ❤️
-    </button>
+    <div class="loading-content">
 
-  </div>
+        <h1 id="bootText">
+            Initializing...
+        </h1>
 
-  <!-- Confetti Canvas -->
-  <canvas id="confetti"></canvas>
+        <div class="progress-container">
 
-  <script src="script.js"></script>
+            <div id="progress-bar"></div>
+
+        </div>
+
+        <p id="statusText">
+
+            Please wait...
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- NAME REVEAL -->
+<!-- ========================= -->
+
+<section id="reveal-screen" class="screen">
+
+    <div class="glass-card">
+
+        <h2 class="small-text">
+
+            Match Found ✨
+
+        </h2>
+
+        <h1 class="main-name">
+
+            ANGUTTY
+
+        </h1>
+
+        <p class="subtitle">
+
+            There you are 😊
+
+        </p>
+
+        <button id="continueBtn">
+
+            Continue ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ========================= -->
+<!-- STARS SCREEN -->
+<!-- (Coming in Part 2) -->
+<!-- ========================= -->
+
+<section id="stars-screen" class="screen">
+
+</section>
+
+<!-- ========================= -->
+<!-- MESSAGE SCREEN -->
+<!-- (Coming in Part 3) -->
+<!-- ========================= -->
+
+<section id="message-screen" class="screen">
+
+</section>
+
+<!-- ========================= -->
+<!-- FINAL SCREEN -->
+<!-- (Coming later) -->
+<!-- ========================= -->
+
+<section id="ending-screen" class="screen">
+
+</section>
+
+<!-- Confetti -->
+
+<canvas id="confetti"></canvas>
+
+<script src="script.js"></script>
 
 </body>
 </html>
