@@ -275,3 +275,44 @@ button:hover{
     0 15px 40px rgba(255,70,140,.45);
 
 }
+/* ===============================
+        RANDOM STARS
+================================ */
+
+.star{
+
+position:absolute;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.7;
+
+animation:twinkle infinite alternate;
+
+box-shadow:
+
+0 0 8px white;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.2;
+
+transform:scale(.8);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:scale(1.5);
+
+}
+
+}
