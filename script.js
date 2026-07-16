@@ -215,3 +215,95 @@ setInterval(()=>{
     createShootingStar();
 
 },6000);
+// =========================================
+// CINEMATIC GALAXY BACKGROUND
+// =========================================
+
+function showScene1(){
+
+    const starsContainer = document.getElementById("stars");
+    starsContainer.innerHTML = "";
+
+    // -----------------------------
+    // Create 700 Stars
+    // -----------------------------
+    for(let i=0;i<700;i++){
+
+        const star = document.createElement("div");
+        star.className = "star";
+
+        const size = Math.random()*3+1;
+
+        star.style.width = size+"px";
+        star.style.height = size+"px";
+
+        star.style.left = Math.random()*100+"vw";
+        star.style.top = Math.random()*100+"vh";
+
+        star.style.opacity = Math.random();
+
+        // Random brightness
+        star.style.filter =
+        `drop-shadow(0 0 ${Math.random()*8+2}px white)`;
+
+        // Different animation speeds
+        const twinkle =
+        2 + Math.random()*6;
+
+        const float =
+        30 + Math.random()*60;
+
+        star.style.animation =
+        `twinkle ${twinkle}s infinite ease-in-out,
+         floatStar ${float}s linear infinite`;
+
+        starsContainer.appendChild(star);
+    }
+
+    // -----------------------------
+    // Shooting Stars
+    // -----------------------------
+
+    function createMeteor(){
+
+        const meteor=document.createElement("div");
+
+        meteor.className="shooting-star";
+
+        meteor.style.left=
+        Math.random()*window.innerWidth+"px";
+
+        meteor.style.top=
+        Math.random()*250+"px";
+
+        meteor.style.animationDuration=
+        (1+Math.random())+"s";
+
+        document.body.appendChild(meteor);
+
+        setTimeout(()=>{
+            meteor.remove();
+        },2200);
+
+    }
+
+    setInterval(createMeteor,3500);
+
+    // -----------------------------
+    // Floating Galaxy Effect
+    // -----------------------------
+
+    let offset=0;
+
+    setInterval(()=>{
+
+        offset+=0.08;
+
+        starsContainer.style.transform=
+        `translateY(${Math.sin(offset)*10}px)
+         translateX(${Math.cos(offset)*6}px)
+         scale(${1+Math.sin(offset/2)*0.015})`;
+
+    },40);
+
+}
