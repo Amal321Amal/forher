@@ -1,6 +1,6 @@
-/* =========================
-        GOOGLE FONT
-========================= */
+/* =====================================================
+   CINEMATIC GALAXY THEME
+===================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
 
@@ -11,54 +11,97 @@
     font-family:'Poppins',sans-serif;
 }
 
-/* =========================
-      FULL SCREEN
-========================= */
-
 html,
 body{
 
     width:100%;
     height:100%;
     overflow:hidden;
-
-    background:
-    radial-gradient(circle at top,#243b72 0%,#121d3f 40%,#050812 100%);
-
+    background:#020615;
     color:white;
 
 }
 
-/* =========================
-        STARS LAYER
-========================= */
+/* =====================================================
+                    SPACE
+===================================================== */
 
-#stars{
+#space{
 
     position:fixed;
-
-    top:0;
-    left:0;
 
     width:100%;
     height:100%;
 
     overflow:hidden;
 
-    z-index:-2;
+    background:
+
+    radial-gradient(circle at top,
+    #1b2c68,
+    #081126 45%,
+    #000814 100%);
 
 }
 
-/* =========================
-    LOADING SCREEN
-========================= */
+/* =====================================================
+                    NEBULA
+===================================================== */
 
-#loading-screen{
+#nebula{
 
-    position:fixed;
+    position:absolute;
 
-    top:0;
-    left:0;
+    width:180%;
+    height:180%;
+
+    left:-40%;
+    top:-40%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(120,80,255,.15),
+    transparent 60%),
+
+    radial-gradient(circle,
+    rgba(0,200,255,.10),
+    transparent 65%),
+
+    radial-gradient(circle,
+    rgba(255,0,150,.08),
+    transparent 70%);
+
+    filter:blur(70px);
+
+    animation:
+
+    rotateNebula 100s linear infinite;
+
+}
+
+/* =====================================================
+                    STAR LAYERS
+===================================================== */
+
+#stars1,
+#stars2,
+#stars3{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+}
+
+/* =====================================================
+                    LOADING SCREEN
+===================================================== */
+
+#loadingScreen{
+
+    position:absolute;
 
     width:100%;
     height:100%;
@@ -68,60 +111,67 @@ body{
     justify-content:center;
     align-items:center;
 
-    background:transparent;
-
-    transition:1s;
+    z-index:100;
 
 }
 
-/* =========================
-    LOADER BOX
-========================= */
+/* =====================================================
+                    TERMINAL
+===================================================== */
 
-.loader-container{
+.terminal{
 
-    width:450px;
+    width:520px;
+
+    max-width:90%;
+
+    padding:45px;
+
+    background:
+
+    rgba(255,255,255,.06);
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
 
     text-align:center;
 
-}
+    box-shadow:
 
-.loading-title{
-
-    font-size:60px;
-
-    font-weight:800;
-
-    margin-bottom:40px;
-
-    letter-spacing:1px;
-
-    text-shadow:
-
-    0 0 20px rgba(255,255,255,.3);
+    0 20px 60px rgba(0,0,0,.45);
 
 }
 
-.loading-text{
+/* =====================================================
+                    TITLE
+===================================================== */
 
-    margin-top:20px;
+#bootTitle{
 
-    font-size:22px;
+    font-size:42px;
 
-    color:#c8d0ff;
+    letter-spacing:4px;
+
+    margin-bottom:35px;
 
 }
 
-/* =========================
-      PROGRESS BAR
-========================= */
+/* =====================================================
+                    PROGRESS
+===================================================== */
 
-.progress-bar{
+.progress{
 
     width:100%;
+
     height:14px;
 
-    background:#1a2348;
+    background:#17223f;
 
     border-radius:50px;
 
@@ -129,47 +179,41 @@ body{
 
 }
 
-.progress{
+#bar{
 
     width:0%;
 
     height:100%;
 
-    border-radius:50px;
-
     background:
 
     linear-gradient(
     90deg,
-    #4f7cff,
-    #8c5cff,
-    #ff4d94);
-
-    animation:loading 4s linear forwards;
+    #5d84ff,
+    #8f63ff,
+    #ff4d98);
 
 }
 
-@keyframes loading{
+/* =====================================================
+                    STATUS
+===================================================== */
 
-0%{
+#status{
 
-width:0%;
+    margin-top:25px;
 
-}
+    color:#b8c9ff;
 
-100%{
-
-width:100%;
-
-}
+    font-size:18px;
 
 }
 
-/* =========================
-      MAIN SCREEN
-========================= */
+/* =====================================================
+                    MAIN SCREEN
+===================================================== */
 
-#main-screen{
+#mainScreen{
 
     display:none;
 
@@ -181,287 +225,131 @@ width:100%;
 
 }
 
-/* =========================
-      MESSAGE BOX
-========================= */
+/* =====================================================
+                    GLASS CARD
+===================================================== */
 
-.container{
+.glass{
 
-    width:90%;
-    max-width:900px;
+    width:900px;
 
-    text-align:center;
+    max-width:92%;
 
     padding:60px;
 
-    border-radius:35px;
+    text-align:center;
+
+    border-radius:30px;
 
     background:
 
     rgba(255,255,255,.08);
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:blur(22px);
 
     box-shadow:
 
-    0 20px 60px rgba(0,0,0,.5);
+    0 25px 60px rgba(0,0,0,.45);
 
 }
 
-#title{
+/* =====================================================
+                    TEXT
+===================================================== */
 
-    font-size:70px;
+#sceneTitle{
 
-    margin-bottom:30px;
+    font-size:72px;
 
-    font-weight:800;
+    margin-bottom:25px;
+
+    text-shadow:
+
+    0 0 15px white,
+
+    0 0 40px #5d84ff;
 
 }
 
-#message{
+#sceneText{
 
     font-size:24px;
 
-    line-height:1.8;
+    line-height:1.9;
 
-    color:#e5e9ff;
+    color:#d8e3ff;
 
     margin-bottom:45px;
 
 }
 
-/* =========================
-        BUTTON
-========================= */
+/* =====================================================
+                    BUTTON
+===================================================== */
 
-button{
-
-    padding:
-
-    18px 55px;
+#nextButton{
 
     border:none;
 
+    padding:18px 48px;
+
     border-radius:50px;
-
-    font-size:20px;
-
-    font-weight:600;
 
     cursor:pointer;
 
     color:white;
 
+    font-size:20px;
+
+    font-weight:600;
+
     background:
 
     linear-gradient(
     90deg,
-    #6d7cff,
-    #ff4f8b);
+    #5b8cff,
+    #ff4d94);
 
     transition:.35s;
 
 }
 
-button:hover{
+#nextButton:hover{
 
     transform:
 
-    translateY(-5px)
+    translateY(-4px)
     scale(1.05);
 
-    box-shadow:
-
-    0 15px 40px rgba(255,70,140,.45);
-
-}
-/* ===============================
-        RANDOM STARS
-================================ */
-
-.star{
-
-position:absolute;
-
-background:white;
-
-border-radius:50%;
-
-opacity:.7;
-
-animation:twinkle infinite alternate;
-
-box-shadow:
-
-0 0 8px white;
-
 }
 
-@keyframes twinkle{
+/* =====================================================
+                    ANIMATIONS
+===================================================== */
 
-0%{
-
-opacity:.2;
-
-transform:scale(.8);
-
-}
-
-100%{
-
-opacity:1;
-
-transform:scale(1.5);
-
-}
-
-}
-/* ====================================
-        SHOOTING STAR
-==================================== */
-
-.shooting-star{
-
-    position:fixed;
-
-    width:3px;
-    height:140px;
-
-    background:linear-gradient(white,rgba(255,255,255,0));
-
-    border-radius:50%;
-
-    transform:rotate(-45deg);
-
-    pointer-events:none;
-
-    z-index:-1;
-
-    opacity:.9;
-
-    animation:shootStar 2.5s linear forwards;
-
-}
-
-@keyframes shootStar{
-
-    0%{
-
-        transform:
-        translate(0,0)
-        rotate(-45deg);
-
-        opacity:0;
-
-    }
-
-    10%{
-
-        opacity:1;
-
-    }
-
-    100%{
-
-        transform:
-        translate(1200px,900px)
-        rotate(-45deg);
-
-        opacity:0;
-
-    }
-
-}
-/* ============================
-   Cinematic Stars
-============================ */
-
-.star{
-    position:absolute;
-    border-radius:50%;
-    background:white;
-}
-
-@keyframes twinkle{
-
-0%,100%{
-opacity:.2;
-transform:scale(.8);
-}
-
-50%{
-opacity:1;
-transform:scale(1.5);
-}
-
-}
-
-@keyframes floatStar{
-
-0%{
-transform:translateY(0px);
-}
-
-50%{
-transform:translateY(-40px);
-}
-
-100%{
-transform:translateY(0px);
-}
-
-}
-
-/* ============================
-   Shooting Star
-============================ */
-
-.shooting-star{
-
-position:fixed;
-
-width:180px;
-
-height:2px;
-
-background:linear-gradient(
-90deg,
-white,
-#8ec5ff,
-transparent
-);
-
-box-shadow:
-0 0 12px white,
-0 0 25px #8ec5ff;
-
-transform:rotate(-35deg);
-
-animation:meteor 1.8s linear forwards;
-
-z-index:-1;
-
-}
-
-@keyframes meteor{
+@keyframes rotateNebula{
 
 0%{
 
 transform:
-translate(0,0)
-rotate(-35deg);
+rotate(0deg)
+scale(1);
 
-opacity:1;
+}
+
+50%{
+
+transform:
+rotate(180deg)
+scale(1.15);
 
 }
 
 100%{
 
 transform:
-translate(-900px,700px)
-rotate(-35deg);
-
-opacity:0;
+rotate(360deg)
+scale(1);
 
 }
 
