@@ -1,387 +1,277 @@
-/* ===========================
-   GOOGLE FONT
-=========================== */
+/* =========================
+        GOOGLE FONT
+========================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-html,body{
+/* =========================
+      FULL SCREEN
+========================= */
 
-width:100%;
-height:100%;
-overflow:hidden;
-background:#02040f;
-color:white;
-
-}
-
-/* ===========================
-      GALAXY BACKGROUND
-=========================== */
-
+html,
 body{
 
-background:
-radial-gradient(circle at top,#1b2b5a,#040915 55%,#000 100%);
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#243b72 0%,#121d3f 40%,#050812 100%);
+
+    color:white;
 
 }
 
-/* ===========================
-      STARS
-=========================== */
+/* =========================
+        STARS LAYER
+========================= */
 
 #stars{
 
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-overflow:hidden;
-z-index:-3;
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    z-index:-2;
 
 }
 
-#stars::before{
+/* =========================
+    LOADING SCREEN
+========================= */
 
-content:"";
+#loading-screen{
 
-position:absolute;
+    position:fixed;
 
-width:2px;
-height:2px;
+    top:0;
+    left:0;
 
-background:white;
+    width:100%;
+    height:100%;
 
-border-radius:50%;
+    display:flex;
 
-box-shadow:
+    justify-content:center;
+    align-items:center;
 
-50px 100px white,
-100px 300px white,
-160px 600px white,
-250px 80px white,
-340px 420px white,
-420px 250px white,
-520px 170px white,
-620px 520px white,
-760px 310px white,
-840px 110px white,
-920px 420px white,
-1100px 250px white,
-1300px 500px white,
-1450px 140px white,
-1550px 350px white,
-1700px 220px white,
-1820px 620px white,
-1950px 420px white;
+    background:transparent;
 
-animation:twinkle 4s infinite alternate;
+    transition:1s;
 
 }
 
-/* ===========================
-      SHOOTING STARS
-=========================== */
+/* =========================
+    LOADER BOX
+========================= */
 
-#shooting-stars{
+.loader-container{
 
-position:fixed;
+    width:450px;
 
-top:0;
-left:0;
-
-width:100%;
-height:100%;
-
-pointer-events:none;
-
-z-index:-2;
+    text-align:center;
 
 }
 
-#shooting-stars::before{
+.loading-title{
 
-content:"";
+    font-size:60px;
 
-position:absolute;
+    font-weight:800;
 
-top:-100px;
-left:-100px;
+    margin-bottom:40px;
 
-width:3px;
-height:180px;
+    letter-spacing:1px;
 
-background:linear-gradient(white,transparent);
+    text-shadow:
 
-transform:rotate(-45deg);
-
-animation:shoot 6s linear infinite;
+    0 0 20px rgba(255,255,255,.3);
 
 }
 
-/* ===========================
-      SCREEN
-=========================== */
+.loading-text{
 
-.screen{
+    margin-top:20px;
 
-position:absolute;
+    font-size:22px;
 
-width:100%;
-height:100%;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:1s;
+    color:#c8d0ff;
 
 }
 
-.screen.active{
+/* =========================
+      PROGRESS BAR
+========================= */
 
-opacity:1;
+.progress-bar{
 
-visibility:visible;
+    width:100%;
+    height:14px;
 
-}
+    background:#1a2348;
 
-/* ===========================
-      LOADING BOX
-=========================== */
+    border-radius:50px;
 
-.loading-content{
-
-width:420px;
-
-max-width:90%;
-
-text-align:center;
+    overflow:hidden;
 
 }
 
-#bootText{
+.progress{
 
-font-size:42px;
+    width:0%;
 
-font-weight:700;
+    height:100%;
 
-letter-spacing:2px;
+    border-radius:50px;
 
-margin-bottom:40px;
+    background:
 
-}
+    linear-gradient(
+    90deg,
+    #4f7cff,
+    #8c5cff,
+    #ff4d94);
 
-#statusText{
-
-margin-top:20px;
-
-font-size:18px;
-
-opacity:.75;
+    animation:loading 4s linear forwards;
 
 }
 
-/* ===========================
-     PROGRESS BAR
-=========================== */
+@keyframes loading{
 
-.progress-container{
-
-width:100%;
-height:12px;
-
-border-radius:20px;
-
-background:#1b2035;
-
-overflow:hidden;
-
-box-shadow:0 0 20px rgba(255,255,255,.15);
-
-}
-
-#progress-bar{
+0%{
 
 width:0%;
 
-height:100%;
+}
 
-background:linear-gradient(90deg,#5b8cff,#8a5cff,#ff4d9d);
+100%{
 
-border-radius:20px;
+width:100%;
 
 }
 
-/* ===========================
-      GLASS CARD
-=========================== */
+}
 
-.glass-card{
+/* =========================
+      MAIN SCREEN
+========================= */
 
-width:500px;
+#main-screen{
 
-max-width:92%;
+    display:none;
 
-padding:50px;
+    width:100%;
+    height:100%;
 
-border-radius:30px;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(18px);
-
-box-shadow:
-
-0 15px 50px rgba(0,0,0,.45);
-
-text-align:center;
+    justify-content:center;
+    align-items:center;
 
 }
 
-/* ===========================
-      TEXT
-=========================== */
+/* =========================
+      MESSAGE BOX
+========================= */
 
-.small-text{
+.container{
 
-font-size:22px;
+    width:90%;
+    max-width:900px;
 
-font-weight:300;
+    text-align:center;
 
-letter-spacing:3px;
+    padding:60px;
 
-opacity:.8;
+    border-radius:35px;
 
-}
+    background:
 
-.main-name{
+    rgba(255,255,255,.08);
 
-font-size:75px;
+    backdrop-filter:blur(20px);
 
-margin:20px 0;
+    box-shadow:
 
-letter-spacing:8px;
-
-color:white;
-
-text-shadow:
-
-0 0 20px #8a5cff,
-
-0 0 40px #5b8cff;
+    0 20px 60px rgba(0,0,0,.5);
 
 }
 
-.subtitle{
+#title{
 
-font-size:22px;
+    font-size:70px;
 
-opacity:.85;
+    margin-bottom:30px;
 
-margin-bottom:35px;
+    font-weight:800;
 
 }
 
-/* ===========================
-      BUTTON
-=========================== */
+#message{
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    color:#e5e9ff;
+
+    margin-bottom:45px;
+
+}
+
+/* =========================
+        BUTTON
+========================= */
 
 button{
 
-padding:18px 45px;
+    padding:
 
-border:none;
+    18px 55px;
 
-border-radius:50px;
+    border:none;
 
-font-size:18px;
+    border-radius:50px;
 
-cursor:pointer;
+    font-size:20px;
 
-background:linear-gradient(90deg,#ff4d6d,#ff7eb3);
+    font-weight:600;
 
-color:white;
+    cursor:pointer;
 
-transition:.4s;
+    color:white;
 
-box-shadow:
+    background:
 
-0 0 30px rgba(255,80,120,.4);
+    linear-gradient(
+    90deg,
+    #6d7cff,
+    #ff4f8b);
+
+    transition:.35s;
 
 }
 
 button:hover{
 
-transform:translateY(-4px) scale(1.05);
+    transform:
 
-box-shadow:
+    translateY(-5px)
+    scale(1.05);
 
-0 0 50px rgba(255,80,120,.8);
+    box-shadow:
 
-}
-
-/* ===========================
-      ANIMATIONS
-=========================== */
-
-@keyframes twinkle{
-
-0%{
-
-opacity:.2;
-
-transform:scale(.8);
-
-}
-
-100%{
-
-opacity:1;
-
-transform:scale(1.2);
-
-}
-
-}
-
-@keyframes shoot{
-
-0%{
-
-transform:translate(-200px,-200px) rotate(-45deg);
-
-opacity:0;
-
-}
-
-10%{
-
-opacity:1;
-
-}
-
-100%{
-
-transform:translate(1800px,1000px) rotate(-45deg);
-
-opacity:0;
-
-}
+    0 15px 40px rgba(255,70,140,.45);
 
 }
