@@ -182,3 +182,36 @@ for(let i = 0; i < 250; i++){
     starsContainer.appendChild(star);
 
 }
+// ====================================
+// SHOOTING STARS
+// ====================================
+
+function createShootingStar(){
+
+    const star = document.createElement("div");
+
+    star.classList.add("shooting-star");
+
+    star.style.left =
+        Math.random()*window.innerWidth+"px";
+
+    star.style.top =
+        Math.random()*250+"px";
+
+    document.body.appendChild(star);
+
+    setTimeout(()=>{
+
+        star.remove();
+
+    },2500);
+
+}
+
+// Every 6 seconds
+
+setInterval(()=>{
+
+    createShootingStar();
+
+},6000);
